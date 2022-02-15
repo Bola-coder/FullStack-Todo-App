@@ -6,8 +6,10 @@ const Header = () => {
     <React.Fragment>
       <header>
         <h1>AGE TODO</h1>
-        <input type="search" />
-        <button>Search</button>
+        <form>
+          <input type="search" placeholder="search a todo" />
+          <button>Search</button>
+        </form>
       </header>
     </React.Fragment>
   );
