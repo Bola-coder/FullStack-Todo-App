@@ -1,0 +1,11 @@
+.todo {
+  min-width: 400px;
+  max-width: 720px;
+  padding: 10px;
+}
+
+.todo__header {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}

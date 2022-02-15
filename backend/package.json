@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-todo-backend",
+  "version": "1.0.0",
+  "description": "The backend for a todo app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Ahmed Bolarinwa",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.2.1",
+    "morgan": "^1.10.0",
+    "slugify": "^1.6.3"
+  }
+}
