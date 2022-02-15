@@ -3,19 +3,24 @@ header {
   padding: 20px;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 100vw;
 }
 
 h1 {
   color: #fff;
   font-size: 2rem;
   letter-spacing: 2px;
+  margin-left: 20px;
 }
 
+form {
+  margin-right: 20px;
+}
 input[type="search"] {
   width: 300px;
-  padding: 15px 20px;
+  padding: 12px 20px;
   border: 0;
   border-radius: 5px;
   font-size: 20px;
@@ -27,10 +32,36 @@ input:focus {
 button {
   width: 140px;
   margin-left: 10px;
-  padding: 15px 20px;
+  padding: 12px 20px;
   border: 0;
   border-radius: 5px;
-  background-color: #0a4b5c;
+  background-color: #11687e;
   color: #fff;
   font-size: 20px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  form {
+    margin-right: 0;
+  }
+  input[type="search"] {
+    width: 255px;
+    margin-bottom: 20px;
+  }
 }
