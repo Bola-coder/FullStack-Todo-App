@@ -7,7 +7,7 @@ const Header = () => {
       <h1>AGE TODO</h1>
       <form>
         <input type="search" placeholder="search a todo" />
-        <button>Search</button>
+        <button className="search">Search</button>
       </form>
     </header>
   );

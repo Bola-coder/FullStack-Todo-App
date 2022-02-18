@@ -1,11 +1,10 @@
-.todo {
-  min-width: 400px;
-  max-width: 720px;
+.todos {
   padding: 10px;
 }
 
 .todo__header {
+  margin-top: 30px;
   text-align: center;
-  color: #fff;
+  color: #12bbe6;
   font-size: 2rem;
 }

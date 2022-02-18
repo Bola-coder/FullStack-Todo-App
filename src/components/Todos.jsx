@@ -19,7 +19,7 @@ const Todos = () => {
 
   return (
     <>
-      <div className="todo">
+      <div className="todos">
         <h2 className="todo__header">Your Todos</h2>
         <Todo todos={todos} />
       </div>
