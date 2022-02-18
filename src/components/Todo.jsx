@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./../css/todo.css";
 const Todo = ({ todos }) => {
   console.log(todos);
@@ -8,11 +9,12 @@ const Todo = ({ todos }) => {
         {todos.map((todo, index) => (
           <div key={index} className="todo-content">
             <div className="content">
-              <h3>{todo?.name}</h3>
+              <h3>
+                <Link to={`/${todo._id}`}>{todo?.name}</Link>
+              </h3>
               <p>{todo?.summary}</p>
             </div>
             <div className="buttons">
-              
               <button className="edit">Edit</button>
               <button className="delete">Delete</button>
             </div>

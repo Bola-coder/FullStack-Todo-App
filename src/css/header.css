@@ -29,7 +29,7 @@ input[type="search"] {
 input:focus {
   outline: none;
 }
-button.search {
+.search {
   width: 140px;
   margin-left: 10px;
   padding: 12px 20px;

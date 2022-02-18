@@ -1,0 +1,36 @@
+.details {
+  padding: 30px;
+}
+
+.details button {
+  background-color: #12bbe6;
+}
+
+.details button:hover {
+  opacity: 0.8;
+}
+
+.todo-details {
+  margin: 0 auto;
+  width: 600px;
+  margin-top: 40px;
+}
+
+.todo-details h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  color: #12bbe6;
+  margin-bottom: 40px;
+}
+.todo-details p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 600px;
+  letter-spacing: 2px;
+}
+span {
+  font-weight: 900;
+  color: #12bbe6;
+}

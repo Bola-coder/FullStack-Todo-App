@@ -8,4 +8,5 @@
 .app {
   font-family: "Roboto", sans-serif;
   /* background-color: #4b034b; */
+  height: 100vh;
 }
