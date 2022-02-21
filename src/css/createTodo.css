@@ -1,0 +1,42 @@
+div h2 {
+  font-size: 2rem;
+  color: #12bbe6;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #12bbe6;
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+
+input[type="text"],
+textarea {
+  width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: none;
+  border-left: 2px solid #12bbe6;
+  border-top: 2px solid #12bbe6;
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+button {
+  margin-top: 2%;
+  color: #fff;
+  background-color: #12bbe6;
+  cursor: pointer;
+}

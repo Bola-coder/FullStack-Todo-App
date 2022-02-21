@@ -5,6 +5,7 @@ import "./../css/todoDetails.css";
 const TodoDetails = () => {
   let { id } = useParams();
   const [todo, setTodo] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getTodo(id);
@@ -16,6 +17,7 @@ const TodoDetails = () => {
       .then((data) => {
         console.log(data);
         setTodo(data.data.todo);
+        setLoading(false);
       })
       .catch((err) => console.log(err));
   }
@@ -26,7 +28,11 @@ const TodoDetails = () => {
         {" "}
         <button>Back to todos</button>
       </Link>
-
+      {loading ? (
+        <p className="loading">Loading Todo Details... Please wait</p>
+      ) : (
+        ""
+      )}
       {todo ? (
         <div className="todo-details">
           <h2>

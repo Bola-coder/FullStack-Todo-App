@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./../css/todo.css";
-const Todo = ({ todos }) => {
+const Todo = ({ todos, handleDelete }) => {
   console.log(todos);
+
   return (
     <>
       <div className="todo">
@@ -16,7 +17,9 @@ const Todo = ({ todos }) => {
             </div>
             <div className="buttons">
               <button className="edit">Edit</button>
-              <button className="delete">Delete</button>
+              <button className="delete" onClick={() => handleDelete(todo._id)}>
+                Delete
+              </button>
             </div>
           </div>
         ))}
