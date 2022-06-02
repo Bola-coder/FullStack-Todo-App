@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const todoRoutes = require("./routes/todoRoutes");
+const userRoutes = require("./routes/userRoutes");
 const errorHandler = require("./middlewares/errorMiddleware");
 const cors = require("cors");
 
@@ -19,6 +20,7 @@ app.use(
 app.use(express.json());
 
 app.use("/api/v1/todos", todoRoutes);
+app.use("/api/v1/users", userRoutes);
 
 app.use(errorHandler);
 

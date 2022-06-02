@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <Link to="/">
-        <h1>AGE TODO</h1>
+        <h1>TEX TODO</h1>
       </Link>
       <form>
         <input type="search" placeholder="search a todo" />

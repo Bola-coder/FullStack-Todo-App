@@ -1,6 +1,9 @@
 const Todos = require("./../model/todoModel");
 const handleAsync = require("express-async-handler");
 
+// Private Route
+// GET /api/v1/todos
+// Get all Todos
 exports.getAllTodos = handleAsync(async (req, res) => {
   const todos = await Todos.find();
   if (!todos) {
@@ -16,6 +19,9 @@ exports.getAllTodos = handleAsync(async (req, res) => {
   });
 });
 
+// Private Route
+// POST /api/v1/todos
+// Create new Todo
 exports.createNewTodo = handleAsync(async (req, res) => {
   const newTodo = await Todos.create(req.body);
   if (!newTodo) {
@@ -30,6 +36,9 @@ exports.createNewTodo = handleAsync(async (req, res) => {
   });
 });
 
+// Private Route
+// GET /api/v1/todos/:id
+// Get single Todo
 exports.getTodo = handleAsync(async (req, res) => {
   // const todoID = req.params.id;
   const todo = await Todos.findById(req.params.id);
@@ -45,6 +54,9 @@ exports.getTodo = handleAsync(async (req, res) => {
   });
 });
 
+// Private Route
+// PATCH /api/v1/todos/:id
+// Update Todo
 exports.updateTodo = handleAsync(async (req, res) => {
   const todoID = req.params.id;
   const updatedTodo = await Todos.findByIdAndUpdate(todoID, req.body, {
@@ -59,6 +71,9 @@ exports.updateTodo = handleAsync(async (req, res) => {
   });
 });
 
+// Private Route
+// DELETE /api/v1/todos/:id
+// Delete Todo
 exports.deleteTodo = handleAsync(async (req, res) => {
   const todoID = req.params.id;
   await Todos.findByIdAndDelete(todoID);
