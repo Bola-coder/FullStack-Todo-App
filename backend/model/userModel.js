@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.schema({
+const userSchema = mongoose.Schema({
   firstName: {
     type: String,
     required: [true, "Firstname should not be empty"],
@@ -27,6 +27,6 @@ const userSchema = mongoose.schema({
   },
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
