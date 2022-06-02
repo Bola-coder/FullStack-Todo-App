@@ -1,91 +1,69 @@
 const Todos = require("./../model/todoModel");
+const handleAsync = require("express-async-handler");
 
-exports.getAllTodos = async (req, res) => {
-  try {
-    const todos = await Todos.find();
-    res.status(200).json({
-      status: "success",
-      results: todos.length,
-      data: {
-        todos,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+exports.getAllTodos = handleAsync(async (req, res) => {
+  const todos = await Todos.find();
+  if (!todos) {
+    res.status(404);
+    throw new Error("Can't fetch todos. Please try again");
   }
-};
+  res.status(200).json({
+    status: "success",
+    results: todos.length,
+    data: {
+      todos,
+    },
+  });
+});
 
-exports.createNewTodo = async (req, res) => {
-  try {
-    const newTodo = await Todos.create(req.body);
-    res.status(201).json({
-      status: "success",
-      data: {
-        newTodo,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+exports.createNewTodo = handleAsync(async (req, res) => {
+  const newTodo = await Todos.create(req.body);
+  if (!newTodo) {
+    res.status(404);
+    throw new Error("Error creating new todo. Please try again");
   }
-};
+  res.status(201).json({
+    status: "success",
+    data: {
+      newTodo,
+    },
+  });
+});
 
-exports.getTodo = async (req, res) => {
-  try {
-    const todoID = req.params.id;
-    const todo = await Todos.findById(todoID);
-    res.status(200).json({
-      status: "success",
-      data: {
-        todo,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+exports.getTodo = handleAsync(async (req, res) => {
+  // const todoID = req.params.id;
+  const todo = await Todos.findById(req.params.id);
+  if (!todo) {
+    res.status(404);
+    throw new Error("Error fetching todo. Please try again");
   }
-};
+  res.status(200).json({
+    status: "success",
+    data: {
+      todo,
+    },
+  });
+});
 
-exports.updateTodo = async (req, res) => {
-  try {
-    const todoID = req.params.id;
-    const updatedTodo = await Todos.findByIdAndUpdate(todoID, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    res.status(200).json({
-      status: "success",
-      data: {
-        updatedTodo,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
+exports.updateTodo = handleAsync(async (req, res) => {
+  const todoID = req.params.id;
+  const updatedTodo = await Todos.findByIdAndUpdate(todoID, req.body, {
+    new: true,
+    runValidators: true,
+  });
+  res.status(200).json({
+    status: "success",
+    data: {
+      updatedTodo,
+    },
+  });
+});
 
-exports.deleteTodo = async (req, res) => {
-  try {
-    const todoID = req.params.id;
-    await Todos.findByIdAndDelete(todoID);
-    res.status(204).json({
-      status: "success",
-      data: null,
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
+exports.deleteTodo = handleAsync(async (req, res) => {
+  const todoID = req.params.id;
+  await Todos.findByIdAndDelete(todoID);
+  res.status(204).json({
+    status: "success",
+    data: null,
+  });
+});
