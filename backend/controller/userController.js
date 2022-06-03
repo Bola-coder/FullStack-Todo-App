@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 // Public Route
 // GET /api/v1/users/register
-// Create a nw user
+// Create a new user
 const registerUser = asyncHandler(async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   if (!firstName || !lastName || !email || !password) {
@@ -78,13 +78,14 @@ const loginUser = asyncHandler(async (req, res) => {
 // GET /api/v1/users/profile
 // Authenticate user
 const currentUser = asyncHandler(async (req, res) => {
-  const {_id, firstName, lastName, email} = await User.findById(req.user.id);
+  const { _id, firstName, lastName, email } = await User.findById(req.user.id);
   res.status(200).json({
+    status: "success",
     id: _id,
     email,
     firstName,
     lastName,
-  })
+  });
 });
 
 // Creating a jwt.
