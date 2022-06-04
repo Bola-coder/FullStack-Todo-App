@@ -22,6 +22,16 @@
 .home-text p {
   font-size: 1.5rem;
 }
+
+.home-text button {
+  padding: 15px 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #12bbe6;
+}
 .home-image {
   margin-right: 30px;
 }
@@ -36,7 +46,36 @@
     align-items: center;
     justify-content: space-evenly;
   }
+
+  .home-text h1 {
+    font-size: 4rem;
+  }
+
+  .home-text p {
+    font-size: 1.3rem;
+  }
   .home-image {
     margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .home-text {
+    margin-left: 30px;
+    margin-bottom: 0;
+  }
+  .home-text h1 {
+    font-size: 3rem;
+  }
+
+  .home-text p {
+    font-size: 1.2rem;
+  }
+  .home-image {
+    margin-left: 80px;
+  }
+
+  .home-image img {
+    width: 100%;
   }
 }

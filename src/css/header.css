@@ -1,11 +1,10 @@
 header {
   background: #12bbe6;
   padding: 20px;
-  text-align: center;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
 }
 header h1 {
   color: #fff;
@@ -17,12 +16,9 @@ a {
   text-decoration: none;
 }
 
-form {
-  margin-right: 20px;
-}
 input[type="search"] {
   width: 300px;
-  padding: 12px 20px;
+  padding: 12px 15px;
   border: 0;
   border-radius: 5px;
   font-size: 20px;
@@ -32,9 +28,8 @@ input:focus {
   outline: none;
 }
 .search {
-  width: 140px;
   margin-left: 10px;
-  padding: 12px 20px;
+  padding: 12px 15px;
   border: 0;
   border-radius: 5px;
   background-color: #11687e;
@@ -49,21 +44,42 @@ button:hover {
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  h1 {
+  header h1 {
+    margin-left: 0;
     margin-bottom: 20px;
+  }
+  div > form {
+    margin-left: 150px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  h1 {
+  header h1 {
     font-size: 1.8rem;
   }
-  form {
-    margin-right: 0;
-  }
+
   input[type="search"] {
-    width: 255px;
-    margin-bottom: 20px;
+    margin-left: 60px;
+    width: 200px;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .search {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="search"] {
+    margin-left: 100px;
+    width: 170px;
   }
 }
