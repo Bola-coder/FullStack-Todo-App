@@ -6,6 +6,7 @@ import "./../css/todos.css";
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetchTodos();
@@ -16,10 +17,14 @@ const Todos = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setTodos(data.data.todos);
+        setTodos(data.data?.todos);
         setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(err.message);
+      });
   };
 
   const handleDelete = (id) => {
@@ -44,7 +49,8 @@ const Todos = () => {
           </Link>
         </div>
         {loading ? <p className="loading">Loading Todos... Please wait</p> : ""}
-        <Todo todos={todos} handleDelete={handleDelete} />
+        {error ? <p>{error}</p> : ""}
+        {todos ? <Todo todos={todos} handleDelete={handleDelete} /> : ""}
       </div>
     </>
   );

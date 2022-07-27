@@ -5,8 +5,8 @@ const validateUser = asyncHandler(async (req, res, next) => {
   let token;
   // Checking for authorization headers
   if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
+    req.headers.Authorization &&
+    req.headers.Authorization.startsWith("Bearer")
   ) {
     try {
       // Set token to the Bearer token;
