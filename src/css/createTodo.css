@@ -19,7 +19,7 @@ label {
   font-size: 1.4rem;
 }
 
-input[type="text"],
+input,
 textarea {
   width: 500px;
   padding: 10px 15px;

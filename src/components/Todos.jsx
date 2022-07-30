@@ -21,7 +21,7 @@ const Todos = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Error here:" + err);
         setLoading(false);
         setError(err.message);
       });
