@@ -5,43 +5,54 @@ import "./../css/signup.css";
 const Signup = () => {
   const { signup } = useAuth();
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
 
-  const { firstname, lastname, email, password } = formData;
+  const { firstName, lastName, email, password } = formData;
 
   const handleFormChange = (e) => {
+    const { name, value } = e.target;
     setFormData((current) => ({
       ...current,
-      [e.target.name]: [e.target.value],
+      [name]: value,
     }));
   };
-  console.log(formData);
-  signup();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    signup(formData);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    });
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Register </h2>
       <div>
-        <label htmlFor="firstname">Firstname</label>
+        <label htmlFor="firstName">First Name</label>
         <input
           type="text"
-          name="firstname"
-          placeholder="Enter your FirstName"
-          value={firstname}
+          name="firstName"
+          placeholder="Enter your First Name"
+          value={firstName}
           onChange={handleFormChange}
         />
       </div>
       <div>
-        <label htmlFor="lastname">LastName</label>
+        <label htmlFor="lastName">Last Name</label>
         <input
           type="text"
-          name="lastname"
-          placeholder="Enter your LastName"
-          value={lastname}
+          name="lastName"
+          placeholder="Enter your Last Name"
+          value={lastName}
           onChange={handleFormChange}
         />
       </div>
