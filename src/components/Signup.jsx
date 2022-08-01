@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useAuth } from "./context/authContext";
+import ShowPassword from "./utils/showPassword";
 import "./../css/signup.css";
 
 const Signup = () => {
   const { signup } = useAuth();
+  const { Icon, type, handleShow } = ShowPassword();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -66,15 +68,19 @@ const Signup = () => {
           onChange={handleFormChange}
         />
       </div>
-      <div>
+      <div className="password">
         <label htmlFor="password">Password:</label>
         <input
-          type="password"
+          type={type}
           name="password"
           placeholder="Enter your Password"
           value={password}
           onChange={handleFormChange}
         />
+        <div className="show" onClick={handleShow}>
+          {" "}
+          {Icon}
+        </div>
       </div>
       <button type="submit">Register</button>
     </form>

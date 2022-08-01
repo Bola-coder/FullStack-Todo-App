@@ -22,6 +22,21 @@ input {
   margin-bottom: 15px;
 }
 
+.password {
+  position: relative;
+}
+
+.show {
+  position: absolute;
+  top: 45%;
+  right: 20%;
+}
+.show svg {
+  font-size: 1.3rem;
+  color: #12bbe6;
+  cursor: pointer;
+}
+
 button {
   margin-left: 30%;
 }

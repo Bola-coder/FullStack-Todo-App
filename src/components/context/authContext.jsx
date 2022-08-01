@@ -19,11 +19,13 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setUser(data);
       })
       .catch((err) => console.log(err));
   };
   const values = {
     signup,
+    user,
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
