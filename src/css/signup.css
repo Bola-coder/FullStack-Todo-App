@@ -37,6 +37,6 @@ input {
   cursor: pointer;
 }
 
-button {
+button.auth {
   margin-left: 30%;
 }

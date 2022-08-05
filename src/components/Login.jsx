@@ -3,17 +3,15 @@ import { useAuth } from "./context/authContext";
 import ShowPassword from "./utils/showPassword";
 import "./../css/signup.css";
 
-const Signup = () => {
-  const { signup } = useAuth();
+const Login = () => {
+  const { login } = useAuth();
   const { Icon, type, handleShow } = ShowPassword();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
   });
 
-  const { firstName, lastName, email, password } = formData;
+  const { email, password } = formData;
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +23,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(formData);
+    login(formData);
     setFormData({
       firstName: "",
       lastName: "",
@@ -36,27 +34,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Register </h2>
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          name="firstName"
-          placeholder="Enter your First Name"
-          value={firstName}
-          onChange={handleFormChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Enter your Last Name"
-          value={lastName}
-          onChange={handleFormChange}
-        />
-      </div>
+      <h2>Login </h2>
       <div>
         <label htmlFor="email">Email</label>
         <input
@@ -88,4 +66,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
